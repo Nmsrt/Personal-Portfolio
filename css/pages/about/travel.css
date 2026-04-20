@@ -1,0 +1,201 @@
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.travel-page{
+  width:min(1100px, 100%);
+  margin-inline:auto;
+  padding-bottom: 200px;
+}
+
+/* Back link */
+.travel-back{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+
+  margin-bottom:1rem;
+  font-size:.9rem;
+  color:var(--muted);
+  text-decoration:none;
+
+  transition:
+    color .25s ease,
+    transform .25s ease,
+    text-shadow .25s ease;
+}
+
+/* underline */
+.travel-back::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:1px;
+  background:currentColor;
+  opacity:.8;
+  transition:width .25s ease;
+}
+
+.travel-back:hover{
+  color:#ffffff;
+  transform:translateX(4px);
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.45),
+    0 0 18px rgba(124,92,255,0.35);
+}
+
+.travel-back:hover::after{
+  width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.travel-hero{
+  position:relative;
+  margin-bottom:2.2rem;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 22px 50px rgba(0,0,0,0.55);
+}
+
+.travel-banner{
+  width:100%;
+  height:280px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.1);
+  opacity:.55;
+}
+
+.travel-hero-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:2rem;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.85)
+    );
+}
+
+.travel-hero-text{
+  max-width:560px;
+}
+
+.travel-region-pill{
+  display:inline-block;
+  padding:.35rem .85rem;
+  border-radius:999px;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  background:rgba(0,0,0,0.45);
+  color:rgba(255,255,255,0.9);
+  border:1px solid rgba(255,255,255,0.25);
+  margin-bottom:.6rem;
+}
+
+.travel-hero-title{
+  margin:0;
+  font-size:2.1rem;
+  line-height:1.15;
+}
+
+.travel-hero-subtitle{
+  margin:.35rem 0 0;
+  font-size:1rem;
+  color:rgba(255,255,255,0.85);
+}
+
+/* =========================
+   CONTENT LAYOUT
+========================= */
+
+.travel-layout{
+  display:grid;
+  gap:1.6rem;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:1.6rem 1.7rem;
+  box-shadow:0 12px 32px rgba(0,0,0,0.35);
+}
+
+.card-title{
+  margin:0;
+  font-size:1.1rem;
+}
+
+.card-text{
+  margin-top:.6rem;
+  line-height:1.6;
+  color:rgba(255,255,255,0.9);
+}
+
+.travel-year-meta{
+  margin-top:.25rem;
+  font-size:.85rem;
+  color:var(--muted);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.travel-gallery-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:.9rem;
+}
+
+.travel-gallery-header .card-meta{
+  font-size:.8rem;
+  color:rgba(255,255,255,0.6);
+}
+
+.carousel{
+  margin-top:.4rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:720px){
+  .travel-banner{ height:220px; }
+  .travel-hero-title{ font-size:1.7rem; }
+}
+
+@media (max-width:420px){
+  body.about .about-view[data-view="travel"]{
+    padding-inline:18px;
+  }
+
+  .travel-hero-overlay{
+    padding:1.2rem;
+  }
+
+  .travel-hero-title{
+    font-size:1.45rem;
+  }
+
+  .card{
+    padding:1.3rem 1.35rem;
+  }
+}

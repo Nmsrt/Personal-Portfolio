@@ -1,0 +1,124 @@
+/* GENERAL: TOP GRID */
+.about-grid{
+  display:grid;
+  grid-template-columns:minmax(0, .95fr) minmax(0, 1.05fr);
+  gap:16px;
+  align-items:stretch;
+  margin-bottom:18px;
+}
+
+@media (max-width:1100px){
+  .about-grid{ grid-template-columns:1fr; }
+}
+
+/* GENERAL: GALLERY PANEL */
+.panel-gallery{
+  height:100%;
+  display:flex;
+}
+
+.panel.panel-gallery .panel-body{
+  padding:16px;
+  display:flex;
+  flex:1;
+  min-height:0;
+}
+
+.thumb-gallery{
+  position:relative;
+  width:100%;
+  height:100%;
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.thumb-gallery img,
+.thumb-gallery video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* GENERAL: INTERESTS */
+.about-interests{ margin-top:.6rem; }
+
+.about-interests-row{
+  display:flex;
+  gap:14px;
+  justify-content:space-between;
+  align-items:stretch;
+  flex-wrap:nowrap;
+}
+
+.about-interest-card{
+  flex:0 0 calc((100% - (14px * 2)) / 3);
+  min-height:112px;
+  padding:.85rem 1rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-width:0;
+}
+
+.about-interest-card .card-tag{ display:none; }
+.about-interest-card .card-text{ display:none; }
+
+.about-interest-card .card-header{
+  margin:0;
+  gap:.55rem;
+}
+
+.about-interest-card .card-title{
+  margin:10px 0 0;
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  padding-bottom:.35rem;
+  line-height:1.25;
+  color:rgba(255,255,255,0.92);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.about-interest-card .card-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:.6rem;
+}
+
+.about-interest-card .card-link-btn{
+  padding:.38rem .7rem;
+  font-size:.86rem;
+}
+
+.about-interest-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(124,92,255,0.32);
+  box-shadow:0 12px 32px rgba(0,0,0,0.38), inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* GENERAL: INTERESTS RESPONSIVE */
+@media (max-width:980px){
+  .about-interests-row{ flex-wrap:wrap; }
+
+  .about-interest-card{
+    flex:1 1 280px;
+    min-height:190px;
+    padding:.95rem 1.05rem;
+  }
+
+  .about-interest-card .card-text{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+  }
+
+  .about-interest-card .card-actions{
+    margin-top:auto;
+  }
+}

@@ -1,0 +1,113 @@
+.site-footer{
+  margin-top:0;
+  padding:28px 0;
+
+  background:
+    radial-gradient(720px 260px at 20% 20%, rgba(124,92,255,0.12), transparent 62%),
+    radial-gradient(760px 320px at 85% 30%, rgba(255,138,91,0.10), transparent 64%),
+    linear-gradient(to top, rgba(10,9,16,0.72), rgba(10,9,16,0.28));
+
+  border-top:1px solid rgba(255,255,255,0.10);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.footer-inner{
+  width:min(var(--footer-inner), calc(100% - (var(--container-pad) * 2)));
+  margin-inline:auto;
+
+  display:grid;
+  grid-template-columns:1.1fr 1fr auto;
+  gap:28px;
+  align-items:start;
+}
+
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.footer-name{
+  font-weight:900;
+  letter-spacing:-.01em;
+  color:rgba(244,241,255,0.92);
+}
+
+.footer-meta{
+  color:rgba(244,241,255,0.68);
+  line-height:1.45;
+  font-size:13px;
+  max-width:42ch;
+}
+
+.footer-contact-title{
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:rgba(244,241,255,0.72);
+  margin-bottom:10px;
+}
+
+.footer-contact-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.footer-contact-list li{
+  display:flex;
+  gap:10px;
+  align-items:baseline;
+}
+
+.contact-label{
+  width:72px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(244,241,255,0.50);
+}
+
+.footer-contact-list a{
+  color:rgba(244,241,255,0.82);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.16);
+  padding-bottom:2px;
+  transition:color .15s ease, border-color .15s ease;
+}
+
+.footer-contact-list a:hover{
+  color:rgba(255,255,255,0.96);
+  border-bottom-color:rgba(255,138,91,0.55);
+}
+
+.footer-copy{
+  justify-self:end;
+  align-self:end;
+  color:rgba(244,241,255,0.55);
+  font-size:12px;
+  padding-top:8px;
+}
+
+@media (max-width:1024px){
+  .footer-inner{
+    grid-template-columns:1fr;
+  }
+  .footer-copy{
+    justify-self:start;
+  }
+}
+
+@media (max-width:430px){
+  .site-footer{
+    padding:22px 0;
+  }
+  .contact-label{
+    width:64px;
+  }
+}

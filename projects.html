@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta data-include="partials/head.html" />
+    <link rel="stylesheet" href="css/pages/project/projects.css" />
+  </head>
+
+  <body class="projects-page">
+    <div data-include="partials/header3.html"></div>
+
+    <main class="page projects-layout">
+      <!-- FEATURED THESIS (UNCHANGED) -->
+      <section class="section section-featured" id="featured-section">
+        <header class="section-header">
+          <h1 class="section-title">Featured</h1>
+        </header>
+
+        <article class="featured-card" aria-label="Featured project: DrumXRoll">
+          <div class="featured-media">
+            <img
+              class="featured-image"
+              src="https://res.cloudinary.com/dcnwpgvj5/image/upload/v1765598208/DrumXRoll.png"
+              alt="DrumXRoll project banner"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+
+          <div class="featured-content">
+            <div class="featured-top">
+              <div class="featured-badges">
+                <span class="featured-badge">THESIS · 2024–2026</span>
+                <span class="featured-badge featured-badge--soft">XR · HXIL · Unity</span>
+              </div>
+
+              <h2 class="featured-title">
+                DrumXRoll: Exploring XR Piano Roll in Teaching Drum Improvisation
+              </h2>
+
+              <p class="featured-subtitle">
+                An XR drumming trainer with a 3D piano-roll guide and real-time visual feedback designed to
+                improve improvisation practice, timing, and engagement.
+              </p>
+            </div>
+
+            <div class="featured-actions">
+              <a class="featured-btn featured-btn--primary" href="project.html?id=drumxroll">
+                View Project
+              </a>
+
+              <a class="featured-btn" href="#" target="_blank" rel="noopener">
+                Watch demo
+              </a>
+
+              <a
+                class="featured-btn"
+                href="assets/docs/DrumXRoll Conference Paper.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Read paper
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- DUO CAROUSELS (ACADEMIC LEFT / PERSONAL RIGHT) -->
+      <section class="section section-duo" id="duo-section" aria-label="Projects carousels">
+        <!-- Academic -->
+        <div class="duo-panel" data-carousel="academic">
+          <header class="duo-header">
+            <div class="duo-title">
+              <h2 class="duo-h">Academic Projects</h2>
+              <span
+                class="section-count"
+                id="academic-count"
+                aria-label="Academic project count"
+              ></span>
+            </div>
+
+            <div class="duo-controls" aria-label="Academic carousel controls">
+              <button
+                class="duo-btn"
+                type="button"
+                data-action="prev"
+                aria-label="Previous academic project"
+              >
+                ←
+              </button>
+              <button
+                class="duo-btn"
+                type="button"
+                data-action="next"
+                aria-label="Next academic project"
+              >
+                →
+              </button>
+            </div>
+          </header>
+
+          <div class="carousel-viewport" id="academic-viewport">
+            <div class="carousel-track" id="academic-projects"></div>
+          </div>
+        </div>
+
+        <!-- Personal -->
+        <div class="duo-panel" data-carousel="personal">
+          <header class="duo-header">
+            <div class="duo-title">
+              <h2 class="duo-h">Personal Projects</h2>
+              <span
+                class="section-count"
+                id="personal-count"
+                aria-label="Personal project count"
+              ></span>
+            </div>
+
+            <div class="duo-controls" aria-label="Personal carousel controls">
+              <button
+                class="duo-btn"
+                type="button"
+                data-action="prev"
+                aria-label="Previous personal project"
+              >
+                ←
+              </button>
+              <button
+                class="duo-btn"
+                type="button"
+                data-action="next"
+                aria-label="Next personal project"
+              >
+                →
+              </button>
+            </div>
+          </header>
+
+          <div class="carousel-viewport" id="personal-viewport">
+            <div class="carousel-track" id="personal-projects"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+
+    <script src="js/includes.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="data/project-data.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/footer-year.js"></script>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+/* DESK SETUP */
+:root{
+  --desk-max-width: 1600px;
+  --desk-side-pad: clamp(18px, 4vw, 72px);
+}
+
+/* STACKING FIX: keep page content above any background overlays */
+body.desksetup .page{
+  position: relative;
+  z-index: 2;
+}
+
+.section-desk{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--desk-max-width);
+  margin-inline: auto;
+  padding-inline: var(--desk-side-pad);
+  padding-bottom: 3rem;
+  overflow-x: clip;
+}
+
+.section-desk .section-header{
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  margin-bottom: 2.15rem;
+}
+
+.section-desk .section-title{ margin-bottom: .5rem; }
+
+.section-desk .section-subtitle{
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  max-width: 78ch;
+}
+
+/* BACK LINK */
+.desk-back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .92rem;
+  color: rgba(255,255,255,0.70);
+  text-decoration: none;
+  margin-bottom: .75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.desk-back-link:hover{ color: #fff; }
+
+/* GRID */
+.desk-grid{
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  align-items: stretch;
+  margin-top: .5rem;
+  overflow-x: clip;
+}
+
+/* CARD */
+.desk-card{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 395px;
+  padding: 1.35rem 1.45rem;
+  border-radius: 1.35rem;
+  color: rgba(255,255,255,0.92);
+
+  /* Make default state visible (not “only on hover”) */
+  background: radial-gradient(
+    120% 140% at 20% 0%,
+    rgba(79,140,255,0.18),
+    rgba(255,255,255,0.05) 60%,
+    rgba(0,0,0,0.06) 100%
+  );
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.desk-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(120,180,255,0.60);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.62), 0 0 36px rgba(79,140,255,0.45);
+  background: radial-gradient(
+    120% 140% at 20% 0%,
+    rgba(79,140,255,0.22),
+    rgba(255,255,255,0.06) 60%,
+    rgba(0,0,0,0.06) 100%
+  );
+}
+
+.desk-card-title{
+  font-weight: 600;
+  letter-spacing: .015em;
+  margin-bottom: .15rem;
+}
+
+.desk-card-meta{
+  font-size: .90rem;
+  color: rgba(255,255,255,0.66);
+  margin-bottom: .75rem;
+}
+
+/* TAG */
+.desk-card .card-tag,
+.desk-modal-content .card-tag{
+  display: inline-flex;
+  width: fit-content;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.14);
+  margin-bottom: .75rem;
+}
+
+.desk-card:hover .card-tag{
+  background: rgba(120,180,255,0.18);
+  border-color: rgba(120,180,255,0.40);
+  color: #fff;
+}
+
+/* SPECS (card shows first row only) */
+.desk-spec-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.desk-spec-label{
+  display: block;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,0.62);
+  margin-bottom: .15rem;
+}
+
+.desk-spec-value{
+  display: block;
+  font-size: .97rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.35;
+}
+
+.desk-card .desk-spec-list li:not(:first-child){ display: none; }
+
+/* NOTES */
+.desk-card-notes{
+  font-size: .94rem;
+  color: rgba(255,255,255,0.84);
+  margin: .4rem 0 0;
+}
+
+/* PHOTO */
+.desk-card-photo{
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 132px;
+}
+
+.desk-card-photo img{
+  height: 132px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* MODAL */
+body.no-scroll{ overflow: hidden; }
+
+.desk-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  /* Must be above your fixed topbar (yours is z-index: 9999) */
+  z-index: 20000;
+}
+
+.desk-modal.is-open{ display: flex; }
+
+.desk-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+}
+
+.desk-modal-dialog{
+  position: relative;
+  z-index: 20001;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 1rem;
+  background: #050814;
+  border-radius: 18px;
+  border: 1px solid rgba(120,180,255,0.5);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.9), 0 0 40px rgba(79,140,255,0.6);
+  overflow: hidden;
+}
+
+.desk-modal-close{
+  position: absolute;
+  top: .6rem;
+  right: .8rem;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.78);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: .15rem .4rem;
+  border-radius: 999px;
+}
+
+.desk-modal-close:hover{
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.desk-modal-inner{
+  display: flex;
+  gap: 1.8rem;
+  padding: 1.8rem 1.8rem 1.6rem;
+}
+
+.desk-modal-media{
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.desk-modal-media img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.desk-modal-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.desk-modal-title{
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 .25rem;
+}
+
+.desk-modal-meta{
+  font-size: .9rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 1rem;
+}
+
+/* MODAL SPECS */
+.desk-modal-specs{
+  margin-top: .3rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.desk-modal-specs li{ padding: .7rem 0 .6rem; }
+
+.desk-modal-specs li + li{
+  border-top: 1px solid rgba(140,190,255,0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .desk-card{ min-height: 0; }
+  .desk-grid{ gap: 1.1rem; grid-template-columns: 1fr; }
+  .desk-modal-inner{
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* TOKENS */
+:root{
+  --bg-0:#0c0b14;
+  --bg-1:#15122a;
+  --bg-2:#201b3a;
+
+  --surface:var(--bg-1);
+  --surface-2:var(--bg-2);
+
+  --ink:#f4f1ff;
+  --muted:rgb(244 241 255 / 0.70);
+
+  --stroke:rgb(244 241 255 / 0.16);
+
+  --glass:rgb(12 11 20 / 0.28);
+  --glass-2:rgb(12 11 20 / 0.44);
+
+  --accent:#ff8a5b;
+  --accent-2:#7c5cff;
+  --accent-soft:rgb(255 138 91 / 0.14);
+
+  --r-1:12px;
+  --r-2:18px;
+
+  --shadow-1:0 10px 30px rgb(0 0 0 / 0.35);
+  --shadow-2:0 20px 60px rgb(0 0 0 / 0.45);
+
+  --topbar-h:82px;
+  --topbar-h-mobile:82px;
+  --topbar-offset:var(--topbar-h);
+
+  --container:1100px;
+  --container-pad:clamp(16px, 3vw, 34px);
+
+  --section-pad-top:clamp(42px, 6vh, 84px);
+  --section-pad-bottom:clamp(56px, 8vh, 110px);
+
+  --footer-pad-y:clamp(28px, 4vh, 44px);
+  --footer-inner:880px;
+
+  --drawer-w:min(86vw, 340px);
+}

@@ -1,0 +1,216 @@
+/* Topbar */
+.topbar{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:9999;
+  height:var(--topbar-h);
+
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+
+  padding-inline:var(--container-pad);
+}
+
+/* Left section */
+.topbar-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* Avatar */
+.topbar-avatar{
+  width:46px;
+  height:46px;
+  border-radius:999px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:0 12px 35px rgba(0,0,0,0.35);
+}
+
+/* Center nav */
+.topbar-nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  padding:10px 18px;
+  border-radius:999px;
+
+  background:rgba(0,0,0,0.18);
+  border:1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+/* Nav separator */
+.topbar-sep{
+  font-weight:800;
+  color:rgba(244,241,255,0.25);
+}
+
+/* Right section */
+.topbar-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+/* CTA button */
+.topbar-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+
+  padding:.88rem 1.15rem;
+  border-radius:14px;
+
+  font-weight:800;
+
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  box-shadow:0 18px 55px rgba(0,0,0,0.35);
+  transition:transform .16s ease, background .16s ease;
+}
+
+/* CTA icon */
+.cta-icon{
+  display:inline-grid;
+  place-items:center;
+
+  width:26px;
+  height:26px;
+  border-radius:8px;
+
+  background:rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.14);
+}
+
+/* Nav link */
+.topbar-link{
+  position:relative;
+  padding:.45rem .7rem;
+  border-radius:999px;
+
+  font-weight:700;
+  color:rgba(244,241,255,0.78);
+
+  transition:color .16s ease, transform .16s ease, background .18s ease, box-shadow .18s ease;
+}
+
+/* Active link */
+.topbar-link.is-active{
+  color:var(--accent);
+  background:var(--accent-soft);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.14),
+    0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* Burger */
+.topbar-burger{
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  width:44px;
+  height:44px;
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  box-shadow:0 18px 55px rgba(0,0,0,0.35);
+
+  cursor:pointer;
+  transition:transform .16s ease, background .16s ease;
+}
+
+/* Burger lines */
+.burger-lines{
+  display:grid;
+  gap:6px;
+}
+.burger-lines span{
+  display:block;
+  width:18px;
+  height:2px;
+  border-radius:99px;
+  background:rgba(244,241,255,0.90);
+}
+
+/* Hover */
+@media (hover:hover){
+  .topbar-cta:hover,
+  .topbar-burger:hover{
+    transform:translateY(-1px);
+    background:rgba(255,255,255,0.12);
+  }
+
+  .topbar-link:hover{
+    background:rgba(255,255,255,0.06);
+    color:rgba(244,241,255,0.96);
+    transform:translateY(-1px);
+  }
+}
+
+/* Focus */
+.topbar-link:focus-visible,
+.topbar-cta:focus-visible,
+.topbar-burger:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:3px;
+}
+
+/* Tablet overrides */
+@media (max-width:1024px){
+}
+
+/* Mobile overrides */
+@media (max-width:430px){
+  :root{ --topbar-offset:var(--topbar-h-mobile); }
+
+  .topbar{
+    height:var(--topbar-h-mobile);
+    grid-template-columns:auto 1fr;
+    padding:14px var(--container-pad);
+
+    /* HARD TRANSPARENT */
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Kill glass overlay layers (common culprit) */
+  header.topbar::before,
+  header.topbar::after,
+  .topbar::before,
+  .topbar::after{
+    content: none !important;          /* stronger than background:transparent */
+    display: none !important;
+  }
+
+  .topbar-nav,
+  .topbar-cta-desktop{
+    display:none;
+  }
+
+  .topbar-burger{
+    display:inline-flex;
+  }
+}

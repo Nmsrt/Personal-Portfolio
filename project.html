@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta data-include="partials/head.html" />
+  
+  <link rel="stylesheet" href="css/pages/project/project.css" />
+</head>
+
+<body>
+  <!-- header include -->
+  <div data-include="partials/header3.html"></div>
+
+  <!-- NOTE: added page--with-topbar to force content below fixed header -->
+  <main class="page page--with-topbar">
+    <section class="section" id="project-section">
+      <div class="section-header">
+        <a href="projects.html" class="project-back-link">&larr; Back to Projects</a>
+
+        <!-- Title + GitHub in one row -->
+        <div class="header-main">
+          <h1 id="project-title" class="section-title">Loading project...</h1>
+          <div id="project-links" class="project-links"></div>
+        </div>
+
+        <!-- Tag + meta on one line -->
+        <div class="project-info-row">
+          <span id="project-tag"></span>
+          <span class="separator">·</span>
+          <span id="project-meta"></span>
+        </div>
+
+        <!-- Summary -->
+        <p id="project-summary"></p>
+      </div>
+
+      <article class="card">
+        <div class="gallery-section" id="gallery-wrapper">
+          <h3>Gallery</h3>
+          <div id="project-gallery" class="gallery-grid"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- footer include -->
+  <div data-include="partials/footer.html"></div>
+
+  <!-- scripts -->
+  <script src="js/includes.js"></script>
+  <script src="js/nav.js"></script>
+
+  <!-- data first, then logic -->
+  <script src="data/project-data.js"></script>
+  <script src="js/project.js"></script>
+
+  <!-- footer year -->
+  <script src="js/footer-year.js"></script>
+</body>
+</html>

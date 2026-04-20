@@ -1,0 +1,126 @@
+/* Base tokens */
+:root{
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --bg-0: #0b0d12;
+  --ink: #eef1f6;
+  --lh-body: 1.5;
+  --focus-ring: 2px;
+  --focus-offset: 3px;
+
+  /* Global layout primitive: fixed topbar offset */
+  --topbar-offset: var(--topbar-h, 78px);
+}
+
+/* Mobile: topbar offset changes */
+@media (max-width:430px){
+  :root{
+    --topbar-offset: var(--topbar-h-mobile, var(--topbar-offset));
+  }
+}
+
+/* Box sizing reset */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+/* Root defaults */
+html{
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background: var(--bg-0);
+}
+
+/* Allow % heights to work when needed */
+html, body{
+  height: 100%;
+}
+
+/* Body defaults */
+body{
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  background: var(--bg-0);
+  isolation: isolate;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Global content offset for fixed topbar */
+  padding-top: var(--topbar-offset);
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg{
+  display: block;
+  max-width: 100%;
+}
+
+/* Links */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+
+/* Form controls */
+button,
+input,
+textarea,
+select{
+  font: inherit;
+  color: inherit;
+}
+
+/* Focus ring */
+:focus-visible{
+  outline: var(--focus-ring) solid currentColor;
+  outline-offset: var(--focus-offset);
+}
+
+/* Background layer */
+body::before{
+  z-index: 0;
+}
+
+/* Content layer */
+body > header,
+body > main,
+body > footer{
+  position: relative;
+  z-index: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Tablet overrides */
+@media (max-width: 1024px){
+}
+
+/* Mobile override */
+@media (max-width:430px){
+  body{
+    padding-top: var(--topbar-h-mobile);
+  }
+}

@@ -1,0 +1,115 @@
+/* ABOUT SUBNAV */
+:root{
+  --about-pill-bg:rgb(255 255 255 / 0.06);
+  --about-pill-bd:rgb(255 255 255 / 0.14);
+  --about-accent:rgb(124 92 255 / 0.85);
+  --about-accent-soft:rgb(124 92 255 / 0.18);
+}
+
+/* Sticky within the attached container */
+.about-subnav-wrap{
+  position:sticky;
+  top: 30px;
+  z-index:70;
+}
+
+/* IMPORTANT: remove “separate card” look so it feels attached */
+.about-subnav{
+  width:100%;
+  padding:0;
+  border-radius:0;
+
+  display:flex;
+  flex-direction:column;
+  gap:.42rem;
+
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+
+/* Links still look like pills */
+.about-subnav-link{
+  font-size:.95rem;
+  font-weight:650;
+  color:rgb(244 241 255 / 0.72);
+
+  padding:.62rem .88rem;
+  border-radius:14px;
+
+  display:flex;
+  align-items:center;
+
+  transition:background .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.about-subnav-link:hover{
+  color:rgb(244 241 255 / 0.95);
+  background:var(--about-pill-bg);
+}
+
+.about-subnav-link.is-active{
+  color:#fff;
+  background:var(--about-accent-soft);
+  border:1px solid rgb(124 92 255 / 0.55);
+  box-shadow:0 0 0 3px rgb(124 92 255 / 0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .about-subnav-wrap{
+    top:calc(var(--topbar-offset) + 14px);
+  }
+
+  .about-subnav{
+    flex-direction:row;
+    gap:.35rem;
+    overflow-x:auto;
+    padding:0;
+  }
+
+  .about-subnav-link{
+    font-size:.85rem;
+    padding:.45rem .75rem;
+    white-space:nowrap;
+  }
+}
+
+@media (max-width:430px){
+  .about-subnav-wrap{
+    display:flex;
+    justify-content:center;
+    padding:0 var(--container-pad);
+    margin:6px 0 0;
+  }
+
+  /* On mobile you probably want the “pill bar” look */
+  .about-subnav{
+    width:fit-content;
+    max-width:calc(100vw - (var(--container-pad) * 2));
+    padding:.4rem;
+
+    border-radius:999px;
+    background:rgb(0 0 0 / 0.42);
+    border:1px solid rgb(255 255 255 / 0.14);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+  }
+
+  .about-subnav::-webkit-scrollbar{ display:none; }
+
+  .about-subnav-link{
+    padding:.42rem .72rem;
+    font-size:.82rem;
+    font-weight:700;
+    letter-spacing:.01em;
+  }
+
+  .about-subnav-link.is-active{
+    background:var(--about-accent-soft);
+    border-color:rgb(124 92 255 / 0.45);
+    box-shadow:none;
+  }
+}
+
