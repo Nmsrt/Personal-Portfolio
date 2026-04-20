@@ -151,33 +151,5 @@
         youtube: []
       }
     },
-
-    {
-      id: "drum-cover",
-      category: "personal",
-      tag: "Music · Drumming",
-      title: "Drum Covers",
-      meta: "Drum Covers · Improvisation · Mixing",
-      summary:
-        "Drum covers showcasing groove, timing, and tasteful improvisation—recorded and mixed for clarity.",
-      thumbnail: cdnThumb("DrumCovers"),
-      media: {
-        images: [],
-        videos: [],
-        audio: [],
-        youtube: [
-          {
-            src: "https://www.youtube.com/watch?v=L8tT8VuYJKI",
-            title: "Drum Cover 1",
-            description: "Into The Unknown - Frozen 2 OST"
-          },
-          {
-            src: "https://www.youtube.com/watch?v=JCPj4mS5XQI",
-            title: "Drum Cover 2",
-            description: "Firepower - Bamboo"
-          }
-        ]
-      }
-    }
   ];
 })();
