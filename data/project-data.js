@@ -24,13 +24,31 @@
     {
       id: "beneficiary-system",
       category: "academic",
-      tag: "Course Project · 2023–2024",
+      tag: "Website Development Project · 2023–2024",
       title: "Beneficiary Record Management for Las Piñas PWD Federation Inc.",
       meta: "HTML · CSS · JavaScript",
       github: "https://github.com/NeoMonserrat/LPPWDFI",
       summary:
         "Responsive CRUD system with authentication to manage beneficiary records and streamline workflow.",
       thumbnail: cdnThumb("LPPWDFI"),
+      media: {
+        images: [],
+        videos: [],
+        audio: [],
+        youtube: []
+      }
+    },
+
+    {
+      id: "poverty-classification",
+      category: "academic",
+      tag: "Machine Learning Project · 2026",
+      title: "Household Poverty Status Classification in the National Capital Region Using FIES 2012",
+      meta: "Python · Scikit-learn · Pandas · Jupyter Notebook",
+      github: "https://github.com/NeoMonserrat/Household-Poverty-Status-Classification-in-the-National-Capital-Region-Using-FIES-2012.git",
+      summary:
+        "Machine learning project that classifies households as poor or non-poor in NCR using FIES 2012 data. Utilizes models such as Logistic Regression, KNN, and Neural Networks with feature scaling and hyperparameter tuning to improve prediction performance.",
+      thumbnail: cdnThumb("POVERTY_CLASSIFICATION"), // update if you have a specific asset name
       media: {
         images: [],
         videos: [],
